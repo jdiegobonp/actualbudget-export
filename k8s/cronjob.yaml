@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: actualbudget-export
+  namespace: actualbudget
+spec:
+  schedule: "0 12 * * 5"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: export
+              image: jdiegobonp/actualbudget-export:latest
+              envFrom:
+                - secretRef:
+                    name: actualbudget-export-secret
+              volumeMounts:
+                - name: export-volume
+                  mountPath: /app/export
+          volumes:
+            - name: export-volume
+              persistentVolumeClaim:
+                claimName: actualbudget-export
+          restartPolicy: OnFailure
