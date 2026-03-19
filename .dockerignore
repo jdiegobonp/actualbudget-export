@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
+.git
+.gitignore
+.env
+
+README.md
+ENV_VARIABLES.md
+actual-data/
+export/

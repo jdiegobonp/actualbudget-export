@@ -1,0 +1,27 @@
+{
+  "name": "actualbudget-export",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "node --check index.js export.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdiegobonp/actualbudget-export.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jdiegobonp/actualbudget-export/issues"
+  },
+  "homepage": "https://github.com/jdiegobonp/actualbudget-export#readme",
+  "dependencies": {
+    "@actual-app/api": "^26.3.0",
+    "archiver": "^7.0.1",
+    "dotenv": "^17.3.1"
+  }
+}

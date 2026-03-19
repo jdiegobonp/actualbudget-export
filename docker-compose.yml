@@ -1,0 +1,14 @@
+services:
+  actualbudget-export:
+    image: jdiegobonp/actualbudget-export:latest
+    container_name: actualbudget-export
+    environment:
+      - ACTUAL_PASSWORD=${ACTUAL_PASSWORD}
+      - ACTUAL_DATA_DIR=${ACTUAL_DATA_DIR:-/data}
+      - ACTUAL_SERVER_URL=${ACTUAL_SERVER_URL}
+      - ACTUAL_VERBOSE=${ACTUAL_VERBOSE}
+      - ACTUAL_BUDGET_NAME=${ACTUAL_BUDGET_NAME}
+    volumes:
+      - ${DATA_PATH:-./data}:/data
+    ports:
+      - "3006:3006"
